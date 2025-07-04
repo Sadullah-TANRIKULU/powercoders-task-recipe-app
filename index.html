@@ -45,6 +45,7 @@
       }
       h2 {
         font-family: "Acme", sans-serif;
+        margin-left: 0.5rem;
       }
       .container {
         display: flex;
@@ -76,14 +77,15 @@
       }
 
       .recipe-card:hover {
-        transform: scale(1.03);
+        transform: scale(1.02);
       }
       .show-nutrition {
+        margin-left: 1rem;
         background: #febbcc;
         transition: transform 0.2s;
       }
       .show-nutrition:hover {
-        transform: scale(1.07);
+        transform: scale(1.02);
         background: #ffcccc;
       }
       .nutrition-info {
@@ -96,11 +98,12 @@
         max-height: 120px; /* Adjust as needed */
         opacity: 1;
         margin-top: 0.7rem;
+        text-indent: 1rem;
       }
       .icon-links {
         position: fixed;
         bottom: 0.7rem;
-        left: 1.2rem;
+        right: 1.2rem;
         z-index: 1000;
         display: flex;
         flex-direction: column;
