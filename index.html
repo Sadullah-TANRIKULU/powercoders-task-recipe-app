@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" rem="20px">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Kanit font -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Kanit&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Acme font -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Acme&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="./assets/cow.png" type="image/x-icon" />
+    <title>My Fav Recipe</title>
+    <!-- Meta description -->
+    <meta
+      name="description"
+      content="Discover how to cook delicious Rice & Meat and Lentil Soup with easy video instructions, ingredient scales, and nutrition facts."
+    />
+    <style>
+      body {
+        background: #ffeecc;
+        font-family: "Kanit", sans-serif;
+      }
+      header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 2rem;
+      }
+      header h1 {
+        text-align: center;
+        margin-bottom: 1rem;
+        font-family: "Acme", sans-serif;
+      }
+      header video {
+        display: block;
+        max-width: 100%;
+        border-radius: 0.8rem;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      }
+      h2 {
+        font-family: "Acme", sans-serif;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2.5rem; /* Adds vertical space between cards */
+        overflow: hidden;
+        padding: 2rem 0;
+      }
+      .recipe-card {
+        width: 100%;
+        max-width: 520px;
+        box-sizing: border-box;
+        background: #ffddcc;
+        border-radius: 1rem 1rem 1rem 0;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+        transition: transform 0.2s;
+        will-change: transform;
+      }
+      .recipe-card img {
+        display: block;
+        width: 100%;
+        max-width: 520px; /* Makes images larger, but not wider than the card */
+        height: auto;
+        margin: 0 auto 1.2rem auto;
+        border-radius: 1rem 1rem 0 0; /* Top corners rounded, bottom corners sharp */
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        object-fit: cover;
+      }
+
+      .recipe-card:hover {
+        transform: scale(1.03);
+      }
+      .show-nutrition {
+        background: #febbcc;
+        transition: transform 0.2s;
+      }
+      .show-nutrition:hover {
+        transform: scale(1.07);
+        background: #ffcccc;
+      }
+      .nutrition-info {
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s;
+      }
+      .nutrition-info.visible {
+        max-height: 120px; /* Adjust as needed */
+        opacity: 1;
+        margin-top: 0.7rem;
+      }
+      .icon-links {
+        position: fixed;
+        bottom: 0.7rem;
+        left: 1.2rem;
+        z-index: 1000;
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+      }
+      .icon-links a {
+        font-size: 0.7rem;
+        color: #333;
+        text-decoration: none;
+        opacity: 0.7;
+        transition: opacity 0.2s;
+      }
+      .icon-links a:hover {
+        opacity: 1;
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <img src="./assets/Lentil Garden Plant.png" alt="lentil plant" width="60" />
+        <h1>My Favorite Recipes</h1>
+        <video controls src="./assets/sadullahtanrikulu_intro.webm"></video>
+      </header>
+      <section class="recipe-card">
+        <img src="./assets/rice-meat.jpg" alt="Rice and Meat" />
+        <h2>Rice and Meat</h2>
+        <ul class="ingredients">
+          <li>Rice: 200g</li>
+          <li>Beef: 150g</li>
+          <li>Onion: 1 medium</li>
+          <li>Olive oil: 2 tbsp</li>
+        </ul>
+        <ol class="instructions">
+          <li>Wash the rice and soak it for 20 minutes. Drain well.</li>
+          <li>
+            Boil 2 cups of chicken broth. Add rice, cover, and cook on low for
+            15 minutes. Let it cool.
+          </li>
+          <li>Cut the beef into small cubes. Add salt and pepper.</li>
+          <li>
+            Heat olive oil in a pan. Cook the beef for 3-4 minutes until brown.
+            Take it out.
+          </li>
+          <li>
+            Add chopped onion and garlic to the pan. Cook for 2 minutes until
+            soft.
+          </li>
+          <li>Add peas and carrots. Cook for 1-2 minutes.</li>
+          <li>
+            Add the rice, soy sauce, honey, and ginger. Stir for 3 minutes.
+          </li>
+          <li>
+            Put the beef back in. Move rice to the side. Scramble eggs in the
+            pan, then mix with rice and beef.
+          </li>
+          <li>Top with green onions. Serve hot.</li>
+        </ol>
+
+        <button class="show-nutrition">Show Nutrition</button>
+        <div class="nutrition-info">
+          <p>Carbohydrate: 45g</p>
+          <p>Protein: 22g</p>
+          <p>Fat: 12g</p>
+        </div>
+      </section>
+      <section class="recipe-card">
+        <img src="./assets/lentil.soup.webp" alt="Lentil Soup" />
+        <h2>Lentil Soup</h2>
+        <ul class="ingredients">
+          <li>Red lentils: 150g</li>
+          <li>Carrot: 1 medium</li>
+          <li>Onion: 1 medium</li>
+          <li>Olive oil: 2 tbsp</li>
+          <li>Water: 1 liter</li>
+          <li>Salt: 1 tsp</li>
+          <li>Pepper: 1/2 tsp</li>
+        </ul>
+        <ol class="instructions">
+          <li>Rinse lentils thoroughly under cold water.</li>
+          <li>Chop carrot and onion into small pieces.</li>
+          <li>
+            Heat olive oil in a pot and sauté onion and carrot for 3 minutes.
+          </li>
+          <li>Add the lentils and stir for another minute.</li>
+          <li>Pour in the water, bring to a boil, and reduce to a simmer.</li>
+          <li>
+            Add salt and pepper, then cook for 20–25 minutes until lentils are
+            soft.
+          </li>
+          <li>
+            Blend the soup for a smooth texture, or leave chunky as desired.
+          </li>
+          <li>
+            Serve hot, optionally garnished with fresh herbs or a squeeze of
+            lemon.
+          </li>
+        </ol>
+        <button class="show-nutrition">Show Nutrition</button>
+        <div class="nutrition-info">
+          <p>Carbohydrate: 28g</p>
+          <p>Protein: 9g</p>
+          <p>Fat: 6g</p>
+        </div>
+      </section>
+    </div>
+    <div class="icon-links">
+      <a
+        href="https://iconscout.com/icons/lentil-garden-plant"
+        class="icon-reference"
+        target="_blank"
+        >Lentil Garden Plant</a
+      >
+      <a
+        href="https://iconscout.com/icons/cow"
+        class="icon-reference"
+        target="_blank"
+        >cow</a
+      >
+    </div>
+    <script>
+      document.querySelectorAll(".show-nutrition").forEach((btn) => {
+        btn.addEventListener("click", function () {
+          const info = this.nextElementSibling;
+          info.classList.toggle("visible");
+        });
+      });
+    </script>
+  </body>
+</html>
